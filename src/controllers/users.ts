@@ -13,7 +13,7 @@ users.get("/", async (c) => {
 users.post("/", async (c) => {
   const body = await c.req.json<User>();
   const createdUser = await createUser(body);
-  return c.json(createdUser);
+  return c.json(createdUser, 201);
 });
 
 users.get("/:id", async (c) => {

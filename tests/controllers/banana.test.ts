@@ -12,7 +12,7 @@ describe('Users Controller', () => {
     test('POST users Should return 201 Response', async () => {
         const req = new Request(`${baseUrl}/api/users`, {
             method: 'POST',
-            body: JSON.stringify({}),
+            body: JSON.stringify({name: 'John Doe', email: 'jd@gmail.com'}),
             headers: {
                 'Content-Type': 'application/json'
             }
