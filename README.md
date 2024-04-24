@@ -8,4 +8,8 @@ To run:
 bun run dev
 ```
 
-open http://localhost:3000
+### Prism ORM docs
+- https://www.prisma.io/docs/getting-started
+
+### Hono app port
+open http://localhost:8080
