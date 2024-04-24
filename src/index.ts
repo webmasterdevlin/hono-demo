@@ -1,11 +1,19 @@
-import routerApp from "./routes/todo";
-import { cors } from 'hono/cors'
+import { Hono } from "hono";
+import {routerPosts, routerUsers} from "./controllers";
+import {middlewareCors, middlewareLogger} from "./middleware";
 
-routerApp.use('/api/*', cors({
-  origin: ['http://localhost:3000'],
-}))
+const prefix = "/api"
+const app = new Hono()
+  .basePath(prefix)
+
+middlewareLogger(app);
+middlewareCors(app)
+
+routerPosts(app);
+routerUsers(app)
 
 
-const app = routerApp;
-
-export default app
+export default {
+    port: 8080,
+    fetch: app.fetch
+};

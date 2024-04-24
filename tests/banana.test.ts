@@ -1,5 +1,6 @@
 import {describe, test, expect} from 'bun:test';
 
+const baseUrl = "http://localhost:8080"
 
 describe("arithmetic", () => {
   test("2 + 2", () => {
