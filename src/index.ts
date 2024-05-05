@@ -1,19 +1,17 @@
 import { Hono } from "hono";
-import {routerPosts, routerUsers} from "./controllers";
-import {middlewareCors, middlewareLogger} from "./middleware";
+import { routerPosts, routerUsers } from "./controllers";
+import { middlewareCors, middlewareLogger } from "./middleware";
 
-const prefix = "/api"
-const app = new Hono()
-  .basePath(prefix)
+const prefix = "/api";
+export const app = new Hono().basePath(prefix);
 
 middlewareLogger(app);
-middlewareCors(app)
+middlewareCors(app);
 
 routerPosts(app);
-routerUsers(app)
-
+routerUsers(app);
 
 export default {
-    port: 8080,
-    fetch: app.fetch
+  port: 8080,
+  fetch: app.fetch,
 };
