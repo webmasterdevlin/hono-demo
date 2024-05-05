@@ -2,8 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext"
+    "jsxImportSource": "hono/jsx"
+    // "module": "ESNext"
   }
 }
